@@ -20,7 +20,8 @@ describe DockingStation do
 
     it "docks a bike at a station" do
       bike = Bike.new
-      expect(subject.dock_bike(bike)).to eq bike
+      subject.dock_bike(bike)
+      expect(subject.bikes).to_not be_empty
     end
 
     it "raises an error if the docking station is full (20 bike)" do
