@@ -7,10 +7,11 @@ attr_reader :bike
   def release_bike
     raise "There are no bikes available!" unless @bike
     @bike
-    end
+  end
 
 
   def dock_bike(bike)
+    raise "The station is full!" if @bike
     @bike = bike
   end
 end
